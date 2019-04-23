@@ -1,15 +1,15 @@
 # test_excelAddinGenerator.py
 
 import pytest
-from src.excelAddinGenerator import *
+from excelAddinGenerator import *
 
 def test_success_from_bin():
     # python excelAddinGenerator.py ./vbaProject.bin ./success_bin.xlam
-    src.createFromBin("./vbaProject.bin", "success_bin.xlam")
+    createFromBin("./vbaProject.bin", "success_bin.xlam")
     
 def test_success_from_xlam():
     # python excelAddinGenerator.py ./test.xlam ./succes_xlam.xlam
-    src.createFromBin("./test.xlam", "success_xlam.xlam")
+    createFromBin("./test.xlam", "success_xlam.xlam")
 
 #def test_bin_not_bin():
     # python excelAddinGenerator.py ./notbin.bin ./fail.xlam
