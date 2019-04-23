@@ -1,7 +1,7 @@
 # test_excelAddinGenerator.py
 
 import pytest
-from ../src/excelAddinGenerator import *
+from src.excelAddinGenerator import *
 
 def test_success_from_bin():
     # python excelAddinGenerator.py ./vbaProject.bin ./success_bin.xlam
