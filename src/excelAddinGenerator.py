@@ -1,5 +1,20 @@
 import shutil
 import sys
-# Check that sys.argv[1] is a binary file or a zip archive with a binary file in the correct directory
-shutil.move(sys.argv[1], "data/xl/vbaProject.bin")
-shutil.makearchive(sys.argv[2], 'zip', "data")
+# check the extension on sys.argv[1] to determine which function to call
+# if .xlam
+#     createFromZip(sys.argv[1], sys.argv[2])
+# else if .bin
+#     createFromBin(sys.argv[1], sys.argv[2])
+
+def createFromBin(input, output)
+    # check that input is a binary file or the correct type
+    shutil.move(input, "data/xl/vbaProject.bin")
+    shutil.makearchive(output, 'zip', "data")
+
+def createFromZip(input, output)
+    # check that input is a zip file
+    # check that the zip archive contains /xl/vbaProject.bin
+    # binFile = {extract vbaProject.bin from input}
+    shutil.move(binFile, "data/xl/vbaProject.bin")
+    shutil.makearchive(output, 'zip', "data")
+
