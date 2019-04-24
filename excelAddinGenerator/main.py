@@ -16,7 +16,7 @@ def createFromBin(input_file, output_file):
     """Create a zip file containing the provided bin"""
     # check that input is a binary file or the correct type
     shutil.move(input_file, "src/data/xl/vbaProject.bin")
-    shutil.makearchive(output_file, 'zip', "src/data")
+    shutil.make_archive(output_file, 'zip', "src/data")
 
 def createFromZip(input_file, output_file):
     """Create a zip file containing the bin file within the provided zip file"""
@@ -24,5 +24,5 @@ def createFromZip(input_file, output_file):
     # check that the zip archive contains /xl/vbaProject.bin
     # binFile = {extract vbaProject.bin from input}
     shutil.move(binFile, "src/data/xl/vbaProject.bin")
-    shutil.makearchive(output_file, 'zip', "src/data")
+    shutil.make_archive(output_file, 'zip', "src/data")
 
