@@ -10,7 +10,7 @@ if len(sys.argv) > 1:
     elif input_file.endswith('.bin'):
         createFromBin(input_file, output_file)
     else:
-        raise Exception(input_file . " is not a valid file format.")
+        raise Exception(input_file, " is not a valid file format.")
         
 def createFromBin(input_file, output_file)
     # check that input is a binary file or the correct type
