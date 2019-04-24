@@ -1,3 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
-setup(name="src", packages=find_packages())
+setup(
+    name="excelAddinGenerator",
+    packages=['excelAddinGenerator'],
+    tests_require=['pytest'],
+)
