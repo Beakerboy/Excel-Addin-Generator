@@ -1,7 +1,7 @@
 import shutil
 import sys
 
-if sys.argv[1] != ''
+if len(sys.argv) > 1
     # check the extension on sys.argv[1] to determine which function to call
     input_file = sys.argv[1]
     output_file = sys.argv[2]
