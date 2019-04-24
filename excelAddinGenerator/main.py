@@ -17,9 +17,9 @@ def createFromBin(input_file, output_file):
     # check that input is an OLE file.
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
     with open(input_file, "rb") as f:
-	block = f.read(8)
-        if block != 'd0cf11e0a1b11ae1’:
-            raise Exception('File signature {} is not as expected', format(block))
+	    block = f.read(8)
+	    if block != 'd0cf11e0a1b11ae1':
+            raise Exception('File signature {} is not as expected.', format(block))
     shutil.move(input_file, "src/data/xl/vbaProject.bin")
     shutil.make_archive(output_file, 'zip', "src/data")
 
