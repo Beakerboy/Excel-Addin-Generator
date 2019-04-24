@@ -8,7 +8,7 @@ def main():
         if input_file.endswith('.xlam'):
             createFromZip(input_file, output_file)
         elif input_file.endswith('.bin'):
-            createFromBin(input_file, os.path.dirname(sys.argv[0]) + '../src/data', output_file)
+            createFromBin(input_file, os.path.dirname(sys.argv[0]) + '/../src/data', output_file)
         else:
             raise Exception(input_file, " is not a valid file format.")
 
