@@ -9,7 +9,7 @@ def main():
         if input_file.endswith('.xlam'):
             createFromZip(input_file, output_file)
         elif input_file.endswith('.bin'):
-            self.createFromBin(input_file, output_file)
+            createFromBin(input_file, output_file)
         else:
             raise Exception(input_file, " is not a valid file format.")
 
@@ -29,3 +29,6 @@ def createFromZip(input_file, output_file):
     # check that the zip archive contains /xl/vbaProject.bin
     # binFile = {extract vbaProject.bin from input}
     # createFromBin(binFile, output_file)
+
+if __name__ == "__main__":
+    main()
