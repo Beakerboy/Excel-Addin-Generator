@@ -1,5 +1,4 @@
-import shutil
-import sys
+import shutil, sys, os
 
 def main():
     if len(sys.argv) > 2:
@@ -9,18 +8,18 @@ def main():
         if input_file.endswith('.xlam'):
             createFromZip(input_file, output_file)
         elif input_file.endswith('.bin'):
-            createFromBin(input_file, output_file)
+            createFromBin(input_file, os.path.dirname(argv[0]) + '../src/data', output_file)
         else:
             raise Exception(input_file, " is not a valid file format.")
 
-def createFromBin(input_file, output_file):
+def createFromBin(input_file, wrapper_dir, output_file):
     """Create a zip file containing the provided bin"""
     # check that input is an OLE file.
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
     fileSig = open(input_file, "rb").read(8).hex()
     if fileSig != 'd0cf11e0a1b11ae1':
         raise Exception('File signature {} is not as expected.', format(fileSig))
-    shutil.move(input_file, "src/data/xl/vbaProject.bin")
+    shutil.move(input_file, wrapper_dir + "/xl/vbaProject.bin")
     shutil.make_archive(output_file, 'zip', "src/data")
     shutil.move(output_file + ".zip", output_file)
 
