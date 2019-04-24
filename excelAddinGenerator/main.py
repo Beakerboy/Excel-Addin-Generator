@@ -13,11 +13,13 @@ if len(sys.argv) > 1:
         raise Exception(input_file, " is not a valid file format.")
         
 def createFromBin(input_file, output_file):
+    “””Create a zip file containing the provided bin”””
     # check that input is a binary file or the correct type
     shutil.move(input_file, "data/xl/vbaProject.bin")
     shutil.makearchive(output_file, 'zip', "data")
 
 def createFromZip(input_file, output_file):
+    “””Create a zip file containing the bin file within the provided zip file”””
     # check that input is a zip file
     # check that the zip archive contains /xl/vbaProject.bin
     # binFile = {extract vbaProject.bin from input}
