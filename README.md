@@ -13,8 +13,8 @@ The script can be given a source xlam file, from which the binary file is extrac
 
 **Usage**
 
-`python Excel-Addin-Generator/main.py path/to/vbaProject.bin output/to/myAddin.xlam`
+`python excelAddinGenerator/main.py path/to/vbaProject.bin output/to/myAddin.xlam`
 
 or
 
-`python Excel-Addin-Generator/main.py path/to/source.xlam output/to/myAddin.xlam`
+`python excelAddinGenerator/main.py path/to/source.xlam output/to/myAddin.xlam`
