@@ -22,6 +22,7 @@ def createFromBin(input_file, output_file):
         raise Exception('File signature {} is not as expected.', format(fileSig))
     shutil.move(input_file, "src/data/xl/vbaProject.bin")
     shutil.make_archive(output_file, 'zip', "src/data")
+    shutil.move(output_file + ".zip", output_file)
 
 def createFromZip(input_file, output_file):
     """Create a zip file containing the bin file within the provided zip file"""
