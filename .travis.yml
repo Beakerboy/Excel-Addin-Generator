@@ -8,6 +8,7 @@ install:
   - pip install -e .
 # command to run tests
 script:
-  - coverage run --source=excelAddinGenerator setup.py test
+  - pytest --cov=excelAddinGenerator tests/
+#  - coverage run --source=excelAddinGenerator setup.py test
 after_success:
   - coveralls
