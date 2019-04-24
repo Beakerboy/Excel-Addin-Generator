@@ -9,7 +9,7 @@ def test_success_from_bin():
     
 def test_success_from_xlam():
     # python excelAddinGenerator.py ./test.xlam ./succes_xlam.xlam
-    createFromBin("./test.xlam", "success_xlam.xlam")
+    createFromBin("test/test.xlam", "success_xlam.xlam")
 
 #def test_bin_not_bin():
     # python excelAddinGenerator.py ./notbin.bin ./fail.xlam
