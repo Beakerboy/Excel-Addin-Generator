@@ -7,7 +7,8 @@ def test_success_from_bin():
     # python excelAddinGenerator.py ./vbaProject.bin ./success_bin.xlam
     createFromBin("test/vbaProject.bin", "success_bin.xlam")
     
-def test_success_from_xlam():
+def test_fail_from_bin():
+    with pytest.raises(Exception) as e_info:
     # python excelAddinGenerator.py ./test.xlam ./succes_xlam.xlam
     createFromBin("test/test.xlam", "success_xlam.xlam")
 
