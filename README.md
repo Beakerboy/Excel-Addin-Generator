@@ -1,6 +1,7 @@
 # Excel-Addin-Generator
 Tools to create an Excel Addin from VBA code
-[![Coverage Status](https://coveralls.io/repos/github/Beakerboy/Excel-Addin-Generator/badge.svg?branch=master)](https://coveralls.io/github/Beakerboy/Excel-Addin-Generator?branch=master)
+
+[![Coverage Status](https://coveralls.io/repos/github/Beakerboy/Excel-Addin-Generator/badge.svg?branch=master)](https://coveralls.io/github/Beakerboy/Excel-Addin-Generator?branch=master)[![Build Status](https://travis-ci.org/Beakerboy/Excel-Addin-Generator.svg?branch=master)](https://travis-ci.org/Beakerboy/Excel-Addin-Generator)
 
 
 Preparation
