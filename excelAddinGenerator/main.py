@@ -8,7 +8,7 @@ if len(sys.argv) > 2:
     if input_file.endswith('.xlam'):
         createFromZip(input_file, output_file)
     elif input_file.endswith('.bin'):
-        createFromBin(input_file, output_file)
+        self.createFromBin(input_file, output_file)
     else:
         raise Exception(input_file, " is not a valid file format.")
 
