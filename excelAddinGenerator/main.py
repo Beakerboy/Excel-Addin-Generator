@@ -1,15 +1,16 @@
 import shutil
 import sys
 
-# check the extension on sys.argv[1] to determine which function to call
-input_file = sys.argv[1]
-output_file = sys.argv[2]
-if input_file.endswith('.xlam'):
-    createFromZip(input_file, output_file)
-elif input_file.endswith('.bin'):
-    createFromBin(input_file, output_file)
-else:
-    raise Exception(input_file . " is not a valid file format.")
+if sys.argv[1] != “”
+    # check the extension on sys.argv[1] to determine which function to call
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    if input_file.endswith('.xlam'):
+        createFromZip(input_file, output_file)
+    elif input_file.endswith('.bin'):
+        createFromBin(input_file, output_file)
+    else:
+        raise Exception(input_file . " is not a valid file format.")
         
 def createFromBin(input_file, output_file)
     # check that input is a binary file or the correct type
