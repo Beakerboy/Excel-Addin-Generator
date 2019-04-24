@@ -11,7 +11,7 @@ if len(sys.argv) > 1:
         createFromBin(input_file, output_file)
     else:
         raise Exception(input_file, " is not a valid file format.")
-        
+
 def createFromBin(input_file, output_file):
     """Create a zip file containing the provided bin"""
     # check that input is an OLE file.
@@ -19,7 +19,7 @@ def createFromBin(input_file, output_file):
     with open(input_file, "rb") as f:
 	    block = f.read(8)
 	    if block != 'd0cf11e0a1b11ae1':
-            raise Exception('File signature {} is not as expected.', format(block))
+                raise Exception('File signature {} is not as expected.', format(block))
     shutil.move(input_file, "src/data/xl/vbaProject.bin")
     shutil.make_archive(output_file, 'zip', "src/data")
 
