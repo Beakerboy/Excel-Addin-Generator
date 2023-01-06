@@ -9,7 +9,7 @@ def test_success_from_bin():
     createFromBin("tests/vbaProject.bin", "src/data", "success_bin.xlam")
     # Assert that xlam file is created
     assert exists("success_bin.xlam")
-    createFromZip("tests/success_bin.xlam", "success_xlam.xlam")
+    createFromZip("success_bin.xlam", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
     
 def test_not_bin_exception():
