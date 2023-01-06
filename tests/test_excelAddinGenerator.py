@@ -13,7 +13,7 @@ def test_success_from_bin():
     
     createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
-    #ToDo: assert that bin file within success_xlam.xlam matches bin file within success_bin.xlam
+    #assert that bin file within success_xlam.xlam matches bin file within success_bin.xlam
     
 def test_not_bin_exception():
     """ Test that an exception is thrown if the bin file is not an OLE file"""
