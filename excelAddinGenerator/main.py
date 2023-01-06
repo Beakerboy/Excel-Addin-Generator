@@ -34,6 +34,7 @@ def createFromZip(input_file, wrapper_dir, output_file_name):
         raise Exception(input_file, " is not a valid file format.")
 
 if __name__ == "__main__":
+    args = []
     args[0] = os.path.dirname(sys.argv[0])
     args[1] = sys.argv[1]
     args[2] = sys.argv[2]
