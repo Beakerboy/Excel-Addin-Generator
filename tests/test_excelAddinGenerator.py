@@ -28,3 +28,8 @@ def test_xlam_not_zip():
 def test_main():
     main(["./excelAddinGenerator", "./tests/vbaProject.bin", "success_bin.xlam"])
     main(["./excelAddinGenerator", "success_bin.xlam", "success_xlam.xlam"])
+
+def test_xlam_not_zip():
+    """ Test that an exception is thrown if the zip is not a zip archive"""
+    with pytest.raises(Exception) as e_info:
+        main(["./excelAddinGenerator", "./src/data/xl/styles.xml", "fail.xlam"])
