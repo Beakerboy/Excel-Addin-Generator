@@ -2,6 +2,7 @@
 
 import pytest
 from excelAddinGenerator.main import *
+from os.path import exists
 
 def test_success_from_bin():
     """Test that xlam is successfully generated from a OLE file"""
