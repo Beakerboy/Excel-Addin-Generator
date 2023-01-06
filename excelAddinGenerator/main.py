@@ -22,7 +22,7 @@ def createFromBin(input_file, wrapper_dir, output_file_name):
     if fileSig != 'd0cf11e0a1b11ae1':
         raise Exception('File signature {} is not as expected.', format(fileSig))
     shutil.move(input_file, wrapper_dir + "/xl/vbaProject.bin")
-    shutil.make_archive(output_file, 'zip', wrapper_dir)
+    shutil.make_archive(output_file_name, 'zip', wrapper_dir)
     shutil.move(output_file_name + ".zip", output_file_name)
 
 def createFromZip(input_file, output_file_name):
