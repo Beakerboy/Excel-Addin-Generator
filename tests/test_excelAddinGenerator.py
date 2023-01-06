@@ -9,8 +9,11 @@ def test_success_from_bin():
     createFromBin("tests/vbaProject.bin", "src/data", "success_bin.xlam")
     # Assert that xlam file is created
     assert exists("success_bin.xlam")
+    #ToDo: assert that bin file within success_bin.xlam matches tests/vbaProject.bin
+    
     createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
+    #ToDo: assert that bin file within success_xlam.xlam matches bin file within success_bin.xlam
     
 def test_not_bin_exception():
     """ Test that an exception is thrown if the bin file is not an OLE file"""
