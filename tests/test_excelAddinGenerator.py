@@ -9,7 +9,7 @@ def test_success_from_bin():
     createFromBin("tests/vbaProject.bin", "src/data", "success_bin.xlam")
     # Assert that xlam file is created
     assert exists("success_bin.xlam")
-    createFromZip("success_bin.xlam", "success_xlam.xlam")
+    createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
     
 def test_not_bin_exception():
@@ -25,4 +25,4 @@ def test_not_bin_exception():
 def test_xlam_not_zip():
     """ Test that an exception is thrown if the zip is not a zip archive"""
     with pytest.raises(Exception) as e_info:
-        createFromZip("tests/blank.bin", "./fail.xlam")
+        createFromZip("tests/blank.bin", "src/data", "./fail.xlam")
