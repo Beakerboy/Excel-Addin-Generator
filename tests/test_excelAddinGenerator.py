@@ -16,11 +16,6 @@ def test_not_bin_exception():
     """ Test that an exception is thrown if the bin file is not an OLE file"""
     with pytest.raises(Exception) as e_info:
         createFromBin("tests/blank.bin", "src/data", "./fail.xlam")
-
-def test_not_bin_exception():
-    """ Test that an exception is thrown if the bin file is not an OLE file"""
-    with pytest.raises(Exception) as e_info:
-        createFromBin("tests/not_bin.bin", "src/data", "./fail.xlam")
         
 def test_xlam_not_zip():
     """ Test that an exception is thrown if the zip is not a zip archive"""
