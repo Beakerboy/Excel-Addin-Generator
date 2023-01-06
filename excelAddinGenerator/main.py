@@ -1,14 +1,14 @@
 import shutil, sys, os, zipfile
 
-def main():
-    if len(sys.argv) > 2:
+def main(args):
+    if len(args) > 2:
         # check the extension on sys.argv[1] to determine which function to call
-        input_file = sys.argv[1]
-        output_file_name = sys.argv[2]
+        input_file = args[1]
+        output_file_name = args[2]
         if input_file.endswith('.xlam'):
             createFromZip(input_file, output_file_name)
         elif input_file.endswith('.bin'):
-            createFromBin(input_file, os.path.dirname(sys.argv[0]) + '/../src/data', output_file_name)
+            createFromBin(input_file, os.path.dirname(sys.args[0]) + '/../src/data', output_file_name)
         else:
             raise Exception(input_file, " is not a valid file format.")
 
@@ -34,4 +34,4 @@ def createFromZip(input_file, wrapper_dir, output_file_name):
         raise Exception(input_file, " is not a valid file format.")
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv)
