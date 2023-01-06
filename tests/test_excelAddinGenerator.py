@@ -13,8 +13,11 @@ def test_fail_from_bin():
     with pytest.raises(Exception) as e_info:
         createFromBin("tests/test.xlam", "src/data", "success_xlam.xlam")
 
-#def test_bin_not_bin():
+def test_bin_not_bin():
     # python excelAddinGenerator.py ./notbin.bin ./fail.xlam
+    with pytest.raises(Exception) as e_info:
+        createFromBin("tests/blank.bin", "src/data", "success_xlam.xlam")
 
-#def test_xlam_not_zip():
-    # python excelAddinGenerator.py ./notzip.xlam ./fail.xlam
+def test_xlam_not_zip():
+    with pytest.raises(Exception) as e_info:
+        createFromZip("tests/blank.bin", "./fail.xlam")
