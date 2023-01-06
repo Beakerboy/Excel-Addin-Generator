@@ -21,7 +21,7 @@ def test_xlam_not_zip():
         createFromZip("tests/blank.bin", "./fail.xlam")
         
 def test_success_from_xlam():
-    """Test that xlam is successfully generated from a OLE file"""
+    """Test that xlam is successfully generated from a xlam file"""
     createFromZip("tests/test.xlam", "success_xlam.xlam")
     # Assert that xlam file is created
     assert exists("success_xlam.xlam")
