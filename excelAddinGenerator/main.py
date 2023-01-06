@@ -25,14 +25,14 @@ def createFromBin(input_file, wrapper_dir, output_file_name):
     shutil.make_archive(output_file_name, 'zip', wrapper_dir)
     shutil.move(output_file_name + ".zip", output_file_name)
 
-def createFromZip(input_file, output_file_name):
+def createFromZip(input_file, wrapper_dir, output_file_name):
     """Create a zip file containing the bin file within the provided zip file"""
     # check that input is a zip file
     if zipfile.is_zipfile(input_file):
         # check that the zip archive contains /xl/vbaProject.bin
         with zipfile.ZipFile(input_file, 'r') as zip:
           zip.extract('xl/vbaProject.bin')
-          createFromBin('xl/vbaProject.bin', os.path.dirname(sys.argv[0]) + '/../src/data', output_file_name)
+          createFromBin('/xl/vbaProject.bin', wrapper_dir, output_file_name)
     else:
         raise Exception(input_file, " is not a valid file format.")
 
