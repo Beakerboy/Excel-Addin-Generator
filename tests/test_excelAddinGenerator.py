@@ -24,3 +24,6 @@ def test_xlam_not_zip():
     """ Test that an exception is thrown if the zip is not a zip archive"""
     with pytest.raises(Exception) as e_info:
         createFromZip("tests/blank.bin", "src/data", "./fail.xlam")
+
+def test_main():
+    main(["./excelAddinGenerator", "./tests/vbaProject.bin", "success_bin.xlam"])
