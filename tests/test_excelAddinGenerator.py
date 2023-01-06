@@ -27,3 +27,4 @@ def test_xlam_not_zip():
 
 def test_main():
     main(["./excelAddinGenerator", "./tests/vbaProject.bin", "success_bin.xlam"])
+    main(["./excelAddinGenerator", "success_bin.xlam", "success_xlam.xlam"])
