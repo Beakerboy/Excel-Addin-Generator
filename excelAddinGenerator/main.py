@@ -6,7 +6,7 @@ def main(args):
         input_file = args[1]
         output_file_name = args[2]
         if input_file.endswith('.xlam'):
-            createFromZip(input_file, output_file_name)
+            createFromZip(input_file, args[0] + '/../src/data', output_file_name)
         elif input_file.endswith('.bin'):
             createFromBin(input_file, args[0] + '/../src/data', output_file_name)
         else:
