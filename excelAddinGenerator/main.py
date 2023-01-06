@@ -32,7 +32,7 @@ def createFromZip(input_file, output_file_name):
         # check that the zip archive contains /xl/vbaProject.bin
         with zipfile.ZipFile(input_file, 'r') as zip:
           zip.extract('xl/vbaProject.bin')
-          createFromBin('vbaProject.bin', os.path.dirname(sys.argv[0]) + '/../src/data', output_file_name)
+          createFromBin('xl/vbaProject.bin', os.path.dirname(sys.argv[0]) + '/../src/data', output_file_name)
     else:
         raise Exception(input_file, " is not a valid file format.")
 
