@@ -28,7 +28,7 @@ def createFromZip(input_file, output_file):
     # check that input is a zip file
     if zipfile.is_zipfile(input_file):
         # check that the zip archive contains /xl/vbaProject.bin
-        with zipfile.ZipFile(file_name, 'r') as zip:
+        with zipfile.ZipFile(input_file, 'r') as zip:
           binfile = zip.read('xl/vbaProject.bin')
         createFromBin(binFile, output_file)
     else:
