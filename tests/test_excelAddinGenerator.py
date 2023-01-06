@@ -12,13 +12,14 @@ def test_success_from_bin():
     assert exists("success_bin.xlam")
     #assert that bin file within success_bin.xlam matches tests/vbaProject.bin
     extractBinFromZip("success_bin.xlam")
-    assert hash_file("tests/vbaProject.bin") == hash_file("xl/vbaProject.bin")
+    md5hasher = FileHash('md5')
+    assert md5hasher.hash_file("tests/vbaProject.bin") == md5hasher.hash_file("xl/vbaProject.bin")
 
     createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
     #ToDo: assert that bin file within success_xlam.xlam matches bin file within success_bin.xlam
     extractBinFromZip("success_xlam.xlam")
-    assert hash_file("tests/vbaProject.bin") == hash_file("xl/vbaProject.bin")
+    assert md5hasher.hash_file("tests/vbaProject.bin") == md5hasher.hash_file("xl/vbaProject.bin")
     
 def test_not_bin_exception():
     """ Test that an exception is thrown if the bin file is not an OLE file"""
