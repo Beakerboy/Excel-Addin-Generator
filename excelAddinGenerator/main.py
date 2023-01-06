@@ -14,9 +14,6 @@ def main():
 
 def createFromBin(input_file, wrapper_dir, output_file_name):
     """Create a zip file containing the provided bin"""
-    # check that inputfile has at least 8 bytes
-    if os.path.getsize(input_file) < 8:
-        raise Exception('Bin file too small')
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
     fileSig = open(input_file, "rb").read(8).hex()
     if fileSig != 'd0cf11e0a1b11ae1':
