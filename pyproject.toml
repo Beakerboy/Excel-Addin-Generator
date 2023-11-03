@@ -19,9 +19,10 @@ classifiers = [
 [project.optional-dependencies]
 tests = [
   'coveralls',
+  'filehash',
+  'flake8-annotations',
   'pytest',
-  'pytest-cov',
-  'filehash'
+  'pytest-cov'
 ]
 [project.urls]
 "Homepage" = "https://github.com/Beakerboy/vbaProject-Compiler"
