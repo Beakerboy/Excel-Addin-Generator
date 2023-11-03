@@ -1,6 +1,6 @@
 import shutil, sys, os, zipfile
 
-def main(args):
+def main(args) -> None:
     if len(args) > 2:
         # check the extension on sys.argv[1] to determine which function to call
         input_file = args[1]
@@ -12,7 +12,7 @@ def main(args):
         else:
             raise Exception(input_file, " is not a valid file format.")
 
-def create_from_bin(input_file, wrapper_dir, output_file_name):
+def create_from_bin(input_file, wrapper_dir, output_file_name) -> None:
     """Create a zip file containing the provided bin"""
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
     fileSig = open(input_file, "rb").read(8).hex()
@@ -22,12 +22,12 @@ def create_from_bin(input_file, wrapper_dir, output_file_name):
     shutil.make_archive(output_file_name, 'zip', wrapper_dir)
     shutil.move(output_file_name + ".zip", output_file_name)
 
-def createFromZip(input_file, wrapper_dir, output_file_name):
+def createFromZip(input_file, wrapper_dir, output_file_name) -> None:
     """Create a zip file containing the bin file within the provided zip file"""
     extractBinFromZip(input_file)
     create_from_bin('xl/vbaProject.bin', wrapper_dir, output_file_name)
 
-def extractBinFromZip(input_file):
+def extractBinFromZip(input_file) -> None:
     # check that input is a zip file
     if zipfile.is_zipfile(input_file):
         # check that the zip archive contains /xl/vbaProject.bin
