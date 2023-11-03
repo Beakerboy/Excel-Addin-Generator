@@ -24,13 +24,13 @@ def test_success_from_bin() -> None:
 
 def test_not_bin_exception() -> None:
     """ Test that an exception is thrown if the bin file is not an OLE file"""
-    with pytest.raises(Exception) as e_info:
+    with pytest.raises(Exception):
         excel_addin_generator.main.createFromBin("tests/blank.bin", "src/data", "./fail.xlam")
 
 
 def test_xlam_not_zip() -> None:
     """ Test that an exception is thrown if the zip is not a zip archive"""
-    with pytest.raises(Exception) as e_info:
+    with pytest.raises(Exception):
         excel_addin_generator.main.createFromZip("tests/blank.bin", "src/data", "./fail.xlam")
 
 
@@ -41,5 +41,5 @@ def test_main() -> None:
 
 def test_main_incorrect_type() -> None:
     """ Test that an exception is thrown if the zip is not a zip archive"""
-    with pytest.raises(Exception) as e_info:
+    with pytest.raises(Exception):
         excel_addin_generator.main.main(["./src/excel_addin_generator", "./src/data/xl/styles.xml", "fail.xlam"])
