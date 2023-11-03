@@ -1,3 +1,5 @@
+import os
+import sys
 import excel_addin_generator.main as gen
 
 
@@ -14,4 +16,8 @@ def main(args: list) -> None:
         else:
             raise Exception(input_file, " is not a valid file format.")
 
-main()
+args = []
+args[0] = os.path.dirname(sys.argv[0])
+args[1] = sys.argv[1]
+args[2] = sys.argv[2]
+main(args)
