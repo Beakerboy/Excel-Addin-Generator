@@ -35,11 +35,11 @@ def test_xlam_not_zip() -> None:
 
 
 def test_main() -> None:
-    excel_addin_generator.main.main(["./src/excel_addin_generator", "./tests/vbaProject.bin", "success_bin.xlam"])
-    excel_addin_generator.main.main(["./src/excel_addin_generator", "success_bin.xlam", "success_xlam.xlam"])
+    excel_addin_generator.__main__.main(["./src/excel_addin_generator", "./tests/vbaProject.bin", "success_bin.xlam"])
+    excel_addin_generator.__main__.main(["./src/excel_addin_generator", "success_bin.xlam", "success_xlam.xlam"])
 
 
 def test_main_incorrect_type() -> None:
     """ Test that an exception is thrown if the zip is not a zip archive"""
     with pytest.raises(Exception):
-        excel_addin_generator.main.main(["./src/excel_addin_generator", "./src/excel_addin_generator/data/xl/styles.xml", "fail.xlam"])
+        excel_addin_generator.__main__.main(["./src/excel_addin_generator", "./src/excel_addin_generator/data/xl/styles.xml", "fail.xlam"])
