@@ -1,6 +1,5 @@
 # test_excelAddinGenerator.py
 import excel_addin_generator.main
-import excel_addin_generator.__main__
 import pytest
 from os.path import exists
 from filehash import FileHash
