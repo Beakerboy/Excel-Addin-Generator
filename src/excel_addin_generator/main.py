@@ -12,7 +12,7 @@ def main(args):
         else:
             raise Exception(input_file, " is not a valid file format.")
 
-def createFromBin(input_file, wrapper_dir, output_file_name):
+def create_from_bin(input_file, wrapper_dir, output_file_name):
     """Create a zip file containing the provided bin"""
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
     fileSig = open(input_file, "rb").read(8).hex()
@@ -25,7 +25,7 @@ def createFromBin(input_file, wrapper_dir, output_file_name):
 def createFromZip(input_file, wrapper_dir, output_file_name):
     """Create a zip file containing the bin file within the provided zip file"""
     extractBinFromZip(input_file)
-    createFromBin('xl/vbaProject.bin', wrapper_dir, output_file_name)
+    create_from_bin('xl/vbaProject.bin', wrapper_dir, output_file_name)
 
 def extractBinFromZip(input_file):
     # check that input is a zip file
