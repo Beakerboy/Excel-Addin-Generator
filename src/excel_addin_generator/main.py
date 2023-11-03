@@ -3,6 +3,7 @@ import shutil
 import sys
 import zipfile
 
+
 def main(args: list) -> None:
 
     if len(args) > 2:
@@ -16,6 +17,7 @@ def main(args: list) -> None:
         else:
             raise Exception(input_file, " is not a valid file format.")
 
+
 def create_from_bin(input_file, wrapper_dir, output_file_name) -> None:
 
     """Create a zip file containing the provided bin"""
@@ -27,11 +29,13 @@ def create_from_bin(input_file, wrapper_dir, output_file_name) -> None:
     shutil.make_archive(output_file_name, 'zip', wrapper_dir)
     shutil.move(output_file_name + ".zip", output_file_name)
 
+
 def createFromZip(input_file, wrapper_dir, output_file_name) -> None:
 
     """Create a zip file containing the bin file within the provided zip file"""
     extractBinFromZip(input_file)
     create_from_bin('xl/vbaProject.bin', wrapper_dir, output_file_name)
+
 
 def extractBinFromZip(input_file) -> None:
 
@@ -42,6 +46,7 @@ def extractBinFromZip(input_file) -> None:
             zip.extract('xl/vbaProject.bin')
     else:
         raise Exception(input_file, " is not a valid file format.")
+
 
 if __name__ == "__main__":
     args = []
