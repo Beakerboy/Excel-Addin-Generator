@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "excel_addin_generator"
+version = "0.0.1"
+authors = [
+  { name="Kevin Nowaczyk", email="beakerboy99@yahoo.com" },
+]
+description = "Create an Excel addin with python."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.optional-dependencies]
+tests = [
+  'coveralls',
+  'filehash',
+  'flake8-annotations',
+  'pytest',
+  'pytest-cov'
+]
+[project.urls]
+"Homepage" = "https://github.com/Beakerboy/vbaProject-Compiler"
+"Bug Tracker" = "https://github.com/Beakerboy/vbaProject-Compiler/issues"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = [
+    "tests",
+]
+[tool.setuptools.package-data]
+"*" = ["*.xml", ".rels", "*.rels"]
