@@ -4,7 +4,7 @@ import sys
 import zipfile
 
 
- create_from_bin(input_file: str, wrapper_dir: str, output_file_name: str) -> None:
+def create_from_bin(input_file: str, wrapper_dir: str, output_file_name: str) -> None:
 
     """Create a zip file containing the provided bin"""
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
