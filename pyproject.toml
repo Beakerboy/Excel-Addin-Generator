@@ -34,4 +34,4 @@ testpaths = [
     "tests",
 ]
 [tool.setuptools.package-data]
-"*" = ["*.xml"]
+"*" = ["*.xml", ".rst"]
