@@ -18,6 +18,7 @@ classifiers = [
 ]
 [project.optional-dependencies]
 tests = [
+  'coveralls',
   'pytest',
   'pytest-cov',
   'filehash'
