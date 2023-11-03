@@ -18,7 +18,7 @@ def main(args: list) -> None:
             raise Exception(input_file, " is not a valid file format.")
 
 
-def create_from_bin(input_file, wrapper_dir, output_file_name) -> None:
+def create_from_bin(input_file: str, wrapper_dir: str, output_file_name: str) -> None:
 
     """Create a zip file containing the provided bin"""
     # file must start with 'd0 cf 11 e0 a1 b1 1a e1'
@@ -30,14 +30,14 @@ def create_from_bin(input_file, wrapper_dir, output_file_name) -> None:
     shutil.move(output_file_name + ".zip", output_file_name)
 
 
-def createFromZip(input_file, wrapper_dir, output_file_name) -> None:
+def createFromZip(input_file: str, wrapper_dir: str, output_file_name: str) -> None:
 
     """Create a zip file containing the bin file within the provided zip file"""
     extractBinFromZip(input_file)
     create_from_bin('xl/vbaProject.bin', wrapper_dir, output_file_name)
 
 
-def extractBinFromZip(input_file) -> None:
+def extractBinFromZip(input_file: str) -> None:
 
     # check that input is a zip file
     if zipfile.is_zipfile(input_file):
