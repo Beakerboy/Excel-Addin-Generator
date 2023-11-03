@@ -6,7 +6,7 @@ from filehash import FileHash
 
 def test_success_from_bin():
     """Test that xlam is successfully generated from a OLE file"""
-    excel_addin_generator.createFromBin("tests/vbaProject.bin", "src/data", "success_bin.xlam")
+    excel_addin_generator.main.create_from_bin("tests/vbaProject.bin", "src/data", "success_bin.xlam")
     # Assert that xlam file is created
     assert exists("success_bin.xlam")
     #assert that bin file within success_bin.xlam matches tests/vbaProject.bin
