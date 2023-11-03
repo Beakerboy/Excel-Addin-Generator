@@ -3,8 +3,11 @@ import sys
 import excel_addin_generator.main as gen
 
 
-def main(args: list) -> None:
-
+def main() -> None:
+    args = []
+    args[0] = os.path.dirname(sys.argv[0])
+    args[1] = sys.argv[1]
+    args[2] = sys.argv[2]
     if len(args) > 2:
         # check the extension on sys.argv[1] to determine which function to call
         input_file = args[1]
@@ -16,8 +19,5 @@ def main(args: list) -> None:
         else:
             raise Exception(input_file, " is not a valid file format.")
 
-args = []
-args[0] = os.path.dirname(sys.argv[0])
-args[1] = sys.argv[1]
-args[2] = sys.argv[2]
-main(args)
+
+main()
