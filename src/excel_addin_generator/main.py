@@ -1,6 +1,9 @@
-import shutil, sys, os, zipfile
+import os
+import shutil
+import sys
+import zipfile
 
-def main(args) -> None:
+def main(args: list) -> None:
     if len(args) > 2:
         # check the extension on sys.argv[1] to determine which function to call
         input_file = args[1]
