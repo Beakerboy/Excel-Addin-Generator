@@ -14,7 +14,7 @@ def test_success_from_bin():
     md5hasher = FileHash('md5')
     assert md5hasher.hash_file("tests/vbaProject.bin") == md5hasher.hash_file("xl/vbaProject.bin")
 
-    excel_addin_generator.createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
+    excel_addin_generator.main.createFromZip("success_bin.xlam", "src/data", "success_xlam.xlam")
     assert exists("success_xlam.xlam")
     #assert that bin file within success_xlam.xlam matches bin file within success_bin.xlam
     excel_addin_generator.main.extractBinFromZip("success_xlam.xlam")
